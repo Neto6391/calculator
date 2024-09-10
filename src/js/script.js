@@ -43,52 +43,58 @@ function setOperator(operator) {
     }
 }
 
+function clearHistoryAndSetResult(result) {
+    display.value = result;
+    firstNumber = display.value;
+    secondNumber = '';
+    currentOperator = '';
+    history.textContent = result;
+}
+
+
 function percentage() {
     if (currentOperator === '' && firstNumber) {
-        display.value = parseFloat(firstNumber) / 100;
-        firstNumber = display.value;
+        let result = parseFloat(firstNumber) / 100;
+        clearHistoryAndSetResult(result);
     } else if (currentOperator !== '' && secondNumber) {
-        display.value = (parseFloat(firstNumber) * parseFloat(secondNumber)) / 100;
-        secondNumber = display.value;
+        let result = (parseFloat(firstNumber) * parseFloat(secondNumber)) / 100;
+        clearHistoryAndSetResult(result);
     }
 }
+
 
 function reciprocal() {
     if (display.value !== '0') {
-        display.value = 1 / parseFloat(display.value);
-        if (currentOperator === '') {
-            firstNumber = display.value;
-        } else {
-            secondNumber = display.value;
-        }
+        let result = 1 / parseFloat(display.value);
+        clearHistoryAndSetResult(result);
     }
 }
+
 
 function square() {
-    display.value = Math.pow(parseFloat(display.value), 2);
-    if (currentOperator === '') {
-        firstNumber = display.value;
-    } else {
-        secondNumber = display.value;
-    }
+    let result = Math.pow(parseFloat(display.value), 2);
+    clearHistoryAndSetResult(result);
 }
+
 
 function squareRoot() {
-    display.value = Math.sqrt(parseFloat(display.value));
-    if (currentOperator === '') {
-        firstNumber = display.value;
-    } else {
-        secondNumber = display.value;
-    }
+    let result = Math.sqrt(parseFloat(display.value));
+    clearHistoryAndSetResult(result);
 }
 
+
 function toggleSign() {
-    display.value = parseFloat(display.value) * -1;
-    if (currentOperator === '') {
-        firstNumber = display.value;
-    } else {
-        secondNumber = display.value;
-    }
+    let result = parseFloat(display.value) * -1;
+    clearHistoryAndSetResult(result);
+}
+
+
+function clearHistoryAndSetResult(result) {
+    display.value = result;
+    firstNumber = result.toString();
+    secondNumber = '';
+    currentOperator = '';
+    history.textContent = result;
 }
 
 function calculate() {
