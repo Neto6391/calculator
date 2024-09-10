@@ -23,3 +23,69 @@ body {
     padding: 20px 10px;
     margin-bottom: 20px;
 }
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    background-color: #323232;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #404040;
+}
+
+button:active {
+    background-color: #505050;
+}
+
+.equals {
+    background-color: #ff4081;
+}
+
+.equals:hover {
+    background-color: #ff79a7;
+}
+
+.equals:active {
+    background-color: #f50057;
+}
+
+@media (max-width: 360px) {
+    .calculator {
+        padding: 10px;
+    }
+
+    .buttons {
+        gap: 5px;
+    }
+
+    button {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    .calculator {
+        max-width: 500px;
+    }
+
+    .buttons {
+        gap: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .calculator {
+        max-width: 600px;
+    }
+}
