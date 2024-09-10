@@ -31,3 +31,32 @@ function appendToDisplay(value) {
         secondNumber += value;
     }
 }
+
+function clearDisplay() {
+    display.value = '0';
+    history.textContent = '';
+    firstNumber = '';
+    secondNumber = '';
+    currentOperator = '';
+}
+
+function clearEntry() {
+    display.value = '0';
+    if (currentOperator === '') {
+        firstNumber = '';
+    } else {
+        secondNumber = '';
+    }
+}
+
+function backspace() {
+    display.value = display.value.slice(0, -1);
+    if (display.value === '') {
+        display.value = '0';
+    }
+    if (currentOperator === '') {
+        firstNumber = display.value;
+    } else {
+        secondNumber = display.value;
+    }
+}
