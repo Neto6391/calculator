@@ -10,32 +10,32 @@
 
 <body>
     <div class="calculator">
-        <div class="display">0</div>
+        <input type="text" id="display" readonly value="0">
         <div class="buttons">
             <button>%</button>
             <button>CE</button>
             <button>C</button>
             <button>⌫</button>
-            <button>¹/ₓ</button>
+            <button>1/x</button>
             <button>x²</button>
             <button>√x</button>
-            <button>÷</button>
+            <button class="operator">/</button>
             <button>7</button>
             <button>8</button>
             <button>9</button>
-            <button>×</button>
+            <button class="operator">×</button>
             <button>4</button>
             <button>5</button>
             <button>6</button>
-            <button>-</button>
+            <button class="operator">-</button>
             <button>1</button>
             <button>2</button>
             <button>3</button>
-            <button>+</button>
+            <button class="operator">+</button>
             <button>+/-</button>
             <button>0</button>
-            <button>,</button>
-            <button class="equals">=</button>
+            <button>.</button>
+            <button id="equals" onclick="calculate()">=</button>
         </div>
     </div>
     <script src="js/script.js"></script>
