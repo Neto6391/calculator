@@ -120,8 +120,6 @@ function calculate() {
         display.value = result;
         history.textContent = firstNumber + ' ' + currentOperator + ' ' + secondNumber + ' =';
         firstNumber = result.toString();
-        secondNumber = '';
-        currentOperator = '';
     }
 }
 
