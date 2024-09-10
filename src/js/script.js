@@ -1,6 +1,8 @@
 let display = document.getElementById('display');
+let history = document.getElementById('history');
 let firstNumber = '';
 let secondNumber = '';
+let currentOperator = '';
 let isSecondNumber = false;
 let isClickedComma = false
 
@@ -29,6 +31,15 @@ function appendToDisplay(value) {
         firstNumber += value;
     } else {
         secondNumber += value;
+    }
+}
+
+function setOperator(operator) {
+    if (currentOperator === '') {
+        currentOperator = operator;
+        isSecondNumber = true;
+        history.textContent = firstNumber + ' ' + operator;
+        display.value = '0';
     }
 }
 
@@ -77,6 +88,34 @@ function toggleSign() {
         firstNumber = display.value;
     } else {
         secondNumber = display.value;
+    }
+}
+
+function calculate() {
+    if (currentOperator && secondNumber) {
+        let result;
+        switch (currentOperator) {
+            case '+':
+                result = parseFloat(firstNumber) + parseFloat(secondNumber);
+                break;
+            case '-':
+                result = parseFloat(firstNumber) - parseFloat(secondNumber);
+                break;
+            case '*':
+                result = parseFloat(firstNumber) * parseFloat(secondNumber);
+                break;
+            case '/':
+                result = parseFloat(firstNumber) / parseFloat(secondNumber);
+                break;
+            default:
+                result = display.value;
+        }
+
+        display.value = result;
+        history.textContent = firstNumber + ' ' + currentOperator + ' ' + secondNumber + ' =';
+        firstNumber = result.toString();
+        secondNumber = '';
+        currentOperator = '';
     }
 }
 
