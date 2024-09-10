@@ -1,4 +1,8 @@
-# calculator
+# Calculator
+
+# Objetivo do projeto
+
+Criar uma calculadora que realize operações matemáticas
 
 ## Licença
 
